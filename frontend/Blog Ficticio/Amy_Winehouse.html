@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Amy Winehouse</title>
+    <meta name="description" content="Vida y Obra de Amy Winehouse">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <h1>Amy Winehouse</h1>
+        <h2>cantante y compositora que durante años fue la figura más representativa del Soul moderno</h2>    
+    </header>
+    <main>
+        <img id="amy" src="imagenes/amy.jpg" style=" width: 600px;"> 
+        <p>(Londres, 1983 - 2011) Compositora y cantante de soul británica que fue una de las grandes figuras en la historia reciente del género. Dotada de portentosas cualidades vocales que la llevaron a un vertiginoso éxito, Amy Winehouse arrasó en la entrega de los premios Grammy de 2008 al obtener cinco de los seis galardones a los que optaba el segundo álbum de su discografía, Back to black, uno de los mejores discos de la década. Víctima de la adicción a las drogas y al alcohol y de su propia personalidad autodestructiva, la cantante falleció prematuramente tres años después, cuando ya había prácticamente arruinado su carrera.</p>
+        <h3>Álbumes de estudio:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Año</th>
+                    <th>Álbum</th>
+                    <th>Premios</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2003</td>
+                    <td>Frank</td>
+                    <td><ul>
+                            <li>UK: 3× Platino
+                            <li>FRA: Oro
+                            <li>DE: Platino
+                            <li>CH: Platino
+                        </ul>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>2006</td>
+                    <td>Back to Black</td>
+                    <td>
+                        <ul>
+                            <li>UK: 6× Platino
+                            <li>UK: 2× Platino
+                            <li>AUS: 2× Platino
+                            <li>DE: 6× Platino
+                            <li>NZ: 2× Platino
+                            <li>CH: 6× Platino
+                            <li>FRA: 2x Platino
+                            <li>US: 2× Platino
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+    
+            <li><a href="https://open.spotify.com/artist/6Q192DXotxtaysaqNPy5yR?si=375722c181604587">Amy Winehouse en spotify</a>
+                
+                <form action="process.php" method="post">
+                    <p>conteste esta breve encuesta por favor</p>
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email"><br>
+
+                    <input type="radio" id="html" name="fav_language" value="HTML">
+                    <label for="html">enviar información al correo</label><br>
+
+                    <input type="radio" id="css" name="fav_language" value="CSS">
+                    <label for="css">no enviar información al correo</label><br>
+                    
+                    <p>¿te  gustó nuestro  artículo?</p>
+                    <select name="eleccion">
+                        <option value="si">Si</option>
+                        <option value="no">No</option>
+                        <option value="me_da_igual">Me da igual</option>
+                    </select>
+                    
+
+                    <p>¿en cuales plataformas nos sigues?</p>
+                    <label for="instagram">Instagram</label>
+                    <input type="checkbox" id="azul" name="red_social" value="instagram"><br>
+                    
+                    <label for="twitter">Twitter</label>
+                    <input type="checkbox" id="twitter" name="twitter" value="twitter"><br>
+                    
+                    <label for="facebook">Facebook</label>
+                    <input type="checkbox" id="facebook" name="red_social" value="facebook"><br>
+                    
+                    <label for="tik tok">Tik Tok</label>
+                    <input type="checkbox" id="tik tok" name="red_social" value="tik tok"><br>
+                    
+                    <input type="submit" value="Enviar">
+                </form>
+    </main>
+
+
+    <p class="form-outline">
+        <form class="alinearDisplay ancho mt-5 ms-5" method="POST" action="/plan/${empresa.id}">
+            <select class="form-select" id="servicioElegido" name="servicio">
+                    <c:forEach items="${serviciosNotEmpresa}" var="servicio">
+                        <option value="${servicio.id}">${servicio.servicioOfrecido}</option>
+                    </c:forEach>
+                    <option value=""><button id="miBoton">Haz clic aquí para mostrar el input</button></option>
+                    <option value="">ingresa la opcion que tu prefieras</option>
+            </select>
+            <input type="text" id="miInput" style="display: none;">
+            <input class="btn btn-dark mt-4" type="submit" value="Agregar Servicio"/>
+        </form>
+
+        <script>
+            var boton = document.getElementById('miBoton');
+            var select = document.getElementById('servicioElegido');
+            var input = document.getElementById('miInput');
+            boton.addEventListener('click', function() {
+            input.style.display = 'block';
+            });
+            select.addEventListener('change', function() {
+                if (select.value === 'opcion3') {
+                    input.style.display = 'block';
+                } else {
+                    input.style.display = 'none';
+                }
+            });
+        </script>
+</body>
+</html>

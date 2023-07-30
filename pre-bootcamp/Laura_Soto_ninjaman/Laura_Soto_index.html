@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NinjaMan de Laura</title>
+  <style type="text/css">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .row {
+      line-height: 0;
+    }
+    .wall {
+    background-color: #140582;
+      height: 40px;
+      width: 40px;
+      display: inline-block;
+    }
+    .sushi {
+      background-color: black;
+      height: 40px;
+      width: 40px;
+      display: inline-block;
+      background-image: url("sushi.png");
+      background-size: contain;
+    }
+    .onigiri {
+      background-color: black;
+      height: 40px;
+      width: 40px;
+      display: inline-block;
+      background-image: url("onigiri.png");
+      background-size: contain;
+    }
+    .blank {
+      background-color: black;
+      height: 40px;
+      width: 40px;
+      display: inline-block;
+    }
+    #ninjaman {
+      background-color: black;
+      height: 40px;
+      width: 40px;
+      display: inline-block;
+      background-image: url("ninja.gif");
+      background-size: contain;
+      position: absolute;
+    }
+    #botton {
+      margin-top: 50px;
+      margin-left: 500px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    #pinky {
+      background-color: black;
+      height: 40px;
+      width: 40px;
+      display: inline-block;
+      background-image: url("pinky.gif");
+      background-size: contain;
+      position: absolute;
+    }
+    #bluey {
+      background-color: black;
+      height: 40px;
+      width: 40px;
+      display: inline-block;
+      background-image: url("bluey.gif");
+      background-size: contain;
+      position: absolute;
+    }
+    #scaredy {
+      background-color: black;
+      height: 40px;
+      width: 40px;
+      display: inline-block;
+      background-image: url("scaredy.png");
+      background-size: contain;
+      position: absolute;
+    }
+    #red {
+      background-color: black;
+      height: 40px;
+      width: 40px;
+      display: inline-block;
+      background-image: url("red.gif");
+      background-size: contain;
+      position: absolute;
+    }
+    #pumpky {
+      background-color: black;
+      height: 40px;
+      width: 40px;
+      display: inline-block;
+      background-image: url("pumpky.gif");
+      background-size: contain;
+      position: absolute;
+    }
+    .vida {
+      margin-top: 2px;
+      height: 35px;
+      width: 35px;
+      background-image: url("vidas.png");
+      background-size: contain;
+      float:right;
+    }
+    #puntaje {
+       background-color: black;
+       font-family: monospace;
+       font-size: large;
+       font-weight: bold;
+       color: white;
+       margin-top: 3px;
+       width: 150px;
+       padding: 8px;
+       border-radius: 4px;
+       text-align: center;
+       float:left;
+        }
+    .contenedor {
+      margin-top: 10px;
+      width: 480px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="world"></div>
+  <div id="ninjaman"></div>
+  <div id ="pinky"></div>
+  <div id = "bluey"></div>
+  <div id= "scaredy"></div>
+  <div id= "red"></div>
+  <div id= "pumpky"></div>
+  <div class="contenedor">
+    <div id="puntaje"></div>
+    <div class="vida" id = "vida1"></div>
+    <div class="vida" id = "vida2"></div>
+    <div class="vida" id = "vida3"></div>
+  </div>
+  <div id="muere"></div>
+  <!-- <button id="botton" onclick="totalcount()">Puntaje</button>-->
+</body>
+
+<script>
+  //mapas predefinidos que pueden aparecer aleatoriamente
+  var world1 = [
+    [1,1,1,1,1,1,1,1,1,1,1,1],
+    [1,0,0,2,0,1,0,2,1,2,3,1],
+    [1,0,1,0,1,1,2,1,0,0,3,1],
+    [1,2,1,0,0,0,0,0,0,0,0,1],
+    [1,3,1,1,1,0,0,1,0,1,0,1],
+    [1,0,0,3,0,0,3,1,1,1,0,1],
+    [1,2,1,0,0,1,0,1,0,1,0,1],
+    [1,0,0,2,1,1,0,0,0,1,1,1],
+    [1,2,1,0,0,3,0,2,0,0,0,1],
+    [1,1,1,1,1,1,1,1,1,1,1,1],
+  ];
+  var world2 = [
+    [1,1,1,1,1,1,1,1,0,1,1,1],
+    [1,0,0,2,0,0,0,0,0,0,0,1],
+    [1,0,1,1,0,1,2,1,0,0,1,1],
+    [1,0,1,0,0,0,3,0,0,0,0,1],
+    [1,3,1,1,0,1,0,1,0,1,0,1],
+    [1,0,0,3,0,1,0,1,1,1,0,1],
+    [1,1,1,0,0,1,2,1,0,1,0,1],
+    [1,0,0,0,1,1,0,0,0,0,1,1],
+    [1,0,1,0,1,3,0,0,1,0,2,1],
+    [1,1,1,1,1,1,1,1,1,1,1,1],
+  ];
+  var world3 = [
+    [1,1,1,1,1,1,1,1,1,1,1,1],
+    [1,0,0,2,0,0,0,0,1,0,0,1],
+    [1,0,1,1,0,1,2,1,0,0,1,1],
+    [1,0,1,0,0,0,3,0,0,0,0,1],
+    [1,3,1,1,0,1,0,1,0,1,0,1],
+    [1,0,0,3,0,1,0,1,1,1,0,1],
+    [1,1,0,0,0,1,2,1,0,1,0,1],
+    [1,0,0,0,1,1,0,0,0,0,1,1],
+    [1,0,1,0,1,3,0,0,1,0,2,1],
+    [1,1,1,1,1,1,1,1,1,1,1,1],
+  ];
+  var world4 = [
+    [1,1,1,1,1,1,1,1,1,1,1,1],
+    [1,0,0,2,0,0,0,0,0,0,0,1],
+    [1,0,1,1,0,1,2,1,0,0,1,1],
+    [1,0,1,0,0,0,3,1,0,0,0,1],
+    [1,3,1,1,1,0,0,1,0,1,0,1],
+    [1,0,0,3,0,0,1,1,0,1,0,1],
+    [1,1,1,0,0,1,2,0,0,1,0,1],
+    [1,0,0,0,1,1,0,1,0,0,1,1],
+    [1,0,1,0,1,3,0,0,1,0,2,1],
+    [1,1,1,1,1,1,1,1,1,1,1,1],
+  ];
+  //este arreglo (worlds) se aleatorizara en la linea 190
+  var worlds = [world1,world2,world3,world4];
+  
+  var worldDict = {
+    0: "blank",
+    1: "wall",
+    2: "sushi",
+    3: "onigiri",
+  }
+//posicion inicial en la que aparece ninjaman y fantasma
+  var ninjaman = {
+  x:1,
+  y:1
+}
+var pinky = {
+  x:1,
+  y:5
+}
+
+var bluey = {
+  x:4,
+  y:6
+}
+var scaredy = {
+  x:9,
+  y:8
+}
+var red = {
+  x:9,
+  y:6
+}
+var pumpky = {
+  x:7,
+  y:6
+}
+//variables que permiten contar el puntaje 
+var count = 0;
+var countsushi = 10;
+var countonigiri = 5;
+var vida= 3;
+
+//creacion de mapa
+  function drawWorld(world){
+    output = "";
+    for(var row = 0; row < world.length; row++){
+      output += "<div class = 'row'>"
+      for(var x = 0; x < world[row].length; x++){
+        output += "<div class = '"+ worldDict[world[row][x]] +"'></div>"
+      }
+      output += "</div>"
+    }
+  
+    document.getElementById("world").innerHTML = output;
+  }
+  //se elige un indice aleatorio del arreglo worlds, siendo cada elemento un mapa diferente.Se guarda dentro de la variable newWorld para mas adelante
+  //usarlo con relacion a las teclas (no se como explicar eso, pero las teclas deben hacer alusion al mapa elegido al azar, pues sino no se movera el pacman)
+  var newWorld = worlds[Math.floor(Math.random() * worlds.length)];
+  // se crea el mapa con el arreglo anteriormente elegido al azar
+  drawWorld(newWorld);
+ //ninjaman se crea
+  function drawNinjaman(){
+    document.getElementById("ninjaman").style.top = ninjaman.y * 40 + "px"
+    document.getElementById("ninjaman").style.left = ninjaman.x * 40 + "px"
+  }
+ drawNinjaman();
+ // se crean los enemigos
+  function drawenemy(enemy,enemyId){
+    document.getElementById(enemyId).style.top = enemy.y * 40 + "px"
+    document.getElementById(enemyId).style.left = enemy.x * 40 + "px"
+  }
+  drawenemy(bluey,"bluey");
+  drawenemy(pinky,"pinky");
+  drawenemy(scaredy,"scaredy");
+  drawenemy(red,"red");
+  drawenemy(pumpky,"pumpky");
+
+//funcion que permiten que los enenmigos tengan se muevan aleatoriamente y/o erraticamente
+  function enemyMov(enemigo){
+      moveEnemy = Math.floor(Math.random()*4);
+      //console.log("azar"+moveEnemy);
+      //console.log("posicion pinky"+newWorld[pinky.y][pinky.x + 1]);
+      if (moveEnemy == 0 && newWorld[enemigo.y][enemigo.x + 1] !=1){
+        enemigo.x ++;
+      }
+      else if (moveEnemy == 1 && newWorld[enemigo.y + 1][enemigo.x] !=1){
+        enemigo.y ++;
+      }
+      else if (moveEnemy == 2 && newWorld[enemigo.y][enemigo.x - 1] !=1){
+        enemigo.x --;
+      }
+      else if (moveEnemy == 3 && newWorld[enemigo.y - 1][enemigo.x] !=1){
+        enemigo.y --;
+      }
+      drawenemy(pinky,"pinky");
+      drawenemy(bluey,"bluey");
+      drawenemy(scaredy,"scaredy");
+      drawenemy(red,"red");
+      drawenemy(pumpky,"pumpky");
+    }
+  //funcion que detecta cuando ninjaman colisiona con enemigos
+function collisionDetection(enemies) {
+  if( enemies.y == ninjaman.y &&  enemies.x == ninjaman.x){
+    if(vida == 3){
+      var novida3 = document.getElementById("vida3");
+    novida3.parentNode.removeChild(novida3);
+    }
+    else if(vida == 2){
+      var novida2 = document.getElementById("vida2");
+    novida2.parentNode.removeChild(novida2);
+    }
+    else if(vida == 1){
+      var novida1 = document.getElementById("vida1");
+    novida1.parentNode.removeChild(novida1);
+    }
+    vida = vida - 1;
+    if(vida == 0){
+      //document.getElementById('muere').innerHTML = "<img src=''>";
+      window.alert("Game Over, obtuviste " + count + " puntos");
+      window.location.reload();
+
+      
+    }
+  }
+}
+//funcion que permite el movimiento de ninjaman de acuerdo a la tecla presionada
+  document.onkeydown = function(e){
+    if(e.keyCode == 37){
+      if(newWorld[ninjaman.y][ninjaman.x - 1] !=1){
+        ninjaman.x--;
+        if(newWorld[ninjaman.y][ninjaman.x] == 2){
+          count = count + countsushi;
+        }
+        else if(newWorld[ninjaman.y][ninjaman.x] == 3){
+          count = count + countonigiri
+        }
+    }
+    }
+    if(e.keyCode == 39){
+      if(newWorld[ninjaman.y][ninjaman.x + 1] !=1){
+        ninjaman.x++;
+        if(newWorld[ninjaman.y][ninjaman.x] == 2){
+          count = count + countsushi;
+        }
+        else if(newWorld[ninjaman.y][ninjaman.x] == 3){
+          count = count + countonigiri
+        }
+      }
+    }
+    if(e.keyCode == 40){
+      if(newWorld[ninjaman.y + 1][ninjaman.x] !=1){
+        ninjaman.y++;
+        if(newWorld[ninjaman.y][ninjaman.x] == 2){
+          count = count + countsushi;
+        }
+        else if(newWorld[ninjaman.y][ninjaman.x] == 3){
+          count = count + countonigiri;
+        }
+      }
+    }
+    if(e.keyCode == 38){
+      if(newWorld[ninjaman.y - 1][ninjaman.x] !=1){
+        ninjaman.y--;
+        if(newWorld[ninjaman.y][ninjaman.x] == 2){
+          count = count + countsushi;
+        }
+        else if(newWorld[ninjaman.y][ninjaman.x] == 3){
+          count = count + countonigiri;
+        }
+      }
+    }
+    newWorld[ninjaman.y][ninjaman.x] = 0;
+    drawWorld(newWorld);
+    drawNinjaman();
+
+} 
+//funcion que incia el juego
+function gameLoop() {
+    drawenemy(pinky, "pinky");
+    drawenemy(bluey,"bluey");
+    enemyMov(pinky);
+    enemyMov(bluey);
+    enemyMov(scaredy);
+    enemyMov(red);
+    enemyMov(pumpky);
+    collisionDetection(pinky);
+    collisionDetection(bluey);
+    collisionDetection(scaredy);
+    collisionDetection(red);
+    collisionDetection(pumpky);
+    document.getElementById('puntaje').innerHTML = "Puntaje: " + count ;
+
+      setTimeout(gameLoop, 230)
+    }
+    gameLoop();
+    
+
+</script>
+</html>

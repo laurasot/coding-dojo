@@ -1,0 +1,1 @@
+mi diseño no es responsivo, por lo  que si estan utilizando una pantalla que no es de 15,6 pulgadas, se verá mal

@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+}
+#pagina{
+    width: 970px;
+    height: 630px;
+    background-color: #1B335D;
+    padding-top: 7px;
+}
+
+header{
+    background-color: #CF3036;
+    border-radius: 10px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin-left: 7px;
+    margin-right: 7px;
+    padding-left: 25px;
+}
+h1,h2,p, li{
+    color: #C0DBF2;
+}
+a{
+    color: #66D7E0;
+}
+
+#contenedor{
+    height: 460px;
+    margin: 15px 0px 15px 0px;
+}
+
+#menu_lateral{
+    background-color: #2A7D8C;
+    width: 176px;
+    display: inline-block;
+    border-radius: 15px;
+    vertical-align: top;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left:25px ;
+}
+main{
+    width: 719px;
+    background-color: #0E1822;
+    border-radius: 15px;
+    padding: 13px;
+    display: inline-block;
+    margin-left: 10px;
+}
+section{
+    background-color: #5D6673;
+    padding: 10px;
+    border-radius: 20px;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+p,a{
+    font-size: 14px;
+}
+
+main h2{
+    padding-top: 5px;
+    margin: 0px;
+}
+
+#descripcion_js{
+    padding-left: 15px;
+}
+
+#descripcion_js p {
+    margin: 5px;
+}
+
+.morado{
+    color:#7F94FA;
+}

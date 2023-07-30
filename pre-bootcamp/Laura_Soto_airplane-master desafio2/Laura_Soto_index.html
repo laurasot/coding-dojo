@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<style type="text/css">
+      #ocean {
+		background-image: url("oceano.gif");
+        width: 1200px;
+		height: 700px; 
+	}
+
+	.player {
+		position: absolute;
+		background-image:url("navecita-removebg-preview(1).png");
+		width: 80px;
+		height: 75px;
+	}
+
+	.enemy {
+		position: absolute;
+		background-image:url("enemigo2.png");
+		width: 75px;
+		height: 75px;
+	}
+
+	.missile {
+		position: absolute;
+		background-color: black;
+		width: 6px;
+	    height: 10px;
+	}
+	</style>
+
+  <div id="ocean">
+	<div id="players"></div>
+	<div id="enemies"></div>
+	<div id="missiles"></div>
+  </div>
+
+
+
+
+	<script type="text/javascript">
+	var player = {
+		left: 550,
+		top: 620
+	}
+	var enemies = [
+	{left: 900, top: 30},
+	{left: 750, top: 60},
+	{left: 630, top: 140},
+	{left: 480, top: 140},
+	{left: 330, top: 60},
+	{left: 200, top: 30},
+	]
+
+	var missiles = []
+//funcion que crea los jugadores
+	function drawPlayer(){
+		content = "<div class='player'style='left:"+player.left+"px; top:"+player.top+"px'></div>";
+		document.getElementById("players").innerHTML = content;
+	}
+//se ejecuta funcion
+	drawPlayer();
+//funcion crea los enemigos
+	function drawEnemies(){
+      content = "";
+	  //console.log(enemies);
+	  for(var idx=0; idx<enemies.length; idx++){
+		content += "<div class='enemy'style='left:"+enemies[idx].left+"px; top:"+enemies[idx].top+"px'></div>";
+	  }
+	  document.getElementById("enemies").innerHTML = content;
+	}
+	// funcion que crea misiles
+	function drawMissiles(){
+		content = "";
+		for(var idx=0; idx<missiles.length; idx++){
+			content += "<div class ='missile' style='left:"+missiles[idx].left+"px; top:"+missiles[idx].top+"px'></div>"
+		}
+		document.getElementById("missiles").innerHTML = content;
+	}
+
+    //funcion que mueve enemigos
+	function moveEnemies(){
+		for(var idx=0; idx<enemies.length; idx++){
+	          if (enemies[idx].top < 600 ){
+				enemies[idx].top = enemies[idx].top + 1;
+			//console.log(enemies[idx].top);
+			if(enemies[idx].top == 600){
+				window.alert("Game Over");
+                window.location.reload();
+			}
+			  }
+	  }
+	}
+	function moveMissiles(){
+		for(var idx=0; idx<missiles.length; idx++){
+		  missiles[idx].top = missiles[idx].top - 4;
+	  }
+	}
+
+    document.onkeydown = function(e){
+		if(e.keyCode == 37 && player.left > 0){ //izquier
+          player.left = player.left - 15;
+		}
+		if(e.keyCode == 39 && player.left < 1120){ //derech
+		  player.left = player.left + 15;
+		}
+		if(e.keyCode == 40 && player.top < 630 ){ //abajo
+          player.top = player.top + 15;
+		}
+		if(e.keyCode == 38 && player.top > 470 ){ //arriba
+          player.top = player.top - 15;
+		}
+		if(e.keyCode == 32){ //disparar
+          missiles.push({left: (player.left+34), top: (player.top-8)})
+		  drawMissiles();
+		  }
+		}
+
+	/*	la funcion collisiondection no me funciona porque no tengo bottom, tampoco right para enemies y player, entonces es undefined?
+    function collisiondetection(){
+		
+		for(var idx=0; idx<enemies.length; idx++){
+			console.log(enemies[idx].bottom)
+			if(
+   (
+     (player.top >= enemies[idx].top && player.top <= enemies[idx].bottom)
+     ||
+     (player.bottom >= enemies[idx].top && player.bottom <= enemies[idx].bottom)
+   )
+   &&
+   (
+     (player.right >= enemy.right && player.right <= enemy.left)
+     ||
+     (player.left >= enemy.right && player.left <= enemy.left)
+   )
+){
+	window.alert("Game Over");
+                window.location.reload();
+}
+		}
+	}
+	*/
+    function gameLoop(){
+	  //console.log(drawMissiles())
+	  drawPlayer();
+      //if(posicion actual de enemigos > parte inferior del mapa) => ejecuta moveEnemies
+	  moveEnemies();
+	  drawEnemies();
+
+	  moveMissiles();
+	  drawMissiles();
+	  //collisiondetection();
+	  //console.log(.top);
+
+	  setTimeout(gameLoop, 10)
+	}
+	gameLoop();
+	</script>
+</body>
+</html>

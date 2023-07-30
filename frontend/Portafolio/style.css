@@ -1,0 +1,149 @@
+/*estilo pagina oscura*/
+#pagina_oscura{
+    
+    background: radial-gradient(#6F5964 40%, #4C3840 60%, #201014 ); 
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+/*estilo de header*/
+header{
+    text-align: center;
+}
+header h1{
+    margin-right: 450px;
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    display: inline-block;
+}
+header h2{
+    display: inline-block;
+    margin-left: 450px;
+}
+
+/* estilo de section*/
+
+img {
+    max-width: 100%;
+}
+
+img[src^="imagenes_portafolio/photo_of_me"]{
+    border: 5px solid #C0C0C0;
+    height: 370px;
+    width: 550px;
+    margin-right: 20px;
+    display: inline-block;
+    margin-left: 110px;
+}
+
+#descripcion_ella{
+    width: 700px;
+    height: 370px;
+    background-color: #EDE6ED;
+    margin-left: 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+section p {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#descripcion_ella h2{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    background-image: linear-gradient(white, #878593 50%, white);
+    margin-top: 0px;
+    color: white;
+}
+
+/* estilo contenedor inferior*/
+#contenedor_inferior{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}    
+article{
+    width:400px;
+    height: 730px;
+    display: inline-block;
+    background-color: #EDE6ED;
+}
+article h2, h3{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    background-image: linear-gradient(#FDFCFD, #878593 60%, #FCFCFC);
+    margin-top: 0px;
+    color: white;
+}
+.contenedor_imagen{
+    height: 220px;
+    width: 400px;
+}
+
+.iconos{
+    margin-left: 33px;
+}
+
+.icono{
+    width: 50px;
+    display: inline-block;
+    margin-right: 18px;
+    margin-bottom: 10px;
+
+}
+#family_contacts{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+article button{
+    font-size:18px;
+    background-color:#4B856A;
+    padding: 6px 5px 6px 5px;
+    text-decoration: none;
+    border-radius: 6px;
+    color: #FCFCFC;
+    border: 2px solid black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+article p{
+    width: 350px;
+    text-align: justify;
+    margin-left: 20px;
+    margin-top: 15px;
+
+}
+
+/* estilo footer*/
+footer p, #enlaces{
+    display: flex;
+}
+
+h2, h3, p, button, a{
+    font-family: 'Roboto', sans-serif;
+}
+
+footer a{
+    color: black;
+}
+
+.button{
+    text-align: center;
+}
+
+.icono_footer{
+    width: 20px;
+    margin-left: 10px;
+}
+
+footer{
+    justify-items: center;
+    display: grid;
+}

@@ -1,0 +1,143 @@
+/*pagina completa*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container{
+    background-color: #245076;
+}
+/*header*/
+#logo img{
+    width: 450px;
+}
+
+#barraBusqueda{
+    width: 250px;
+    margin-left: 45%;
+    margin-top: 0px;
+}
+
+#buscador{
+    background-color: #3E3E3E;
+    padding:15px 20px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+#barraBusqueda input{
+    width: 200px;
+    height: 40px;
+}
+
+#barraBusqueda button{
+    height: 36px;
+    width: 40px;
+    background-color: #245076;
+    border-radius: 5px;
+}
+/*clases generales */
+.alinear{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.alinearFlex{
+    display: flex;
+    justify-content: center;
+}
+.centrarTexto{
+    text-align: center;
+}
+
+.vinetaCuadrada{
+    list-style-type: square;
+}
+
+.blanco{
+    color: white;
+}
+.amarillo{
+    color: #FFDD26;
+}
+
+.negro{
+    color: black;
+}
+
+.azul{
+   color: #85B2DA;
+   text-decoration: none;
+}
+.marginTop20{
+    margin-top: 20px;
+}
+
+.marginLeft20{
+    margin-left: 20px;
+}
+
+.marginRight20{
+    margin-right: 20px;
+}
+
+.sinSubrayar{
+    list-style: none;
+}
+
+/*nav*/
+
+nav{
+    background-color: #467DAD;
+    padding: 25px;
+    width: 1250px;
+    border-radius: 5px;
+    margin: 0 auto;
+    -webkit-box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.95);
+    -moz-box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.95);
+    box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.95);
+}
+
+nav a{
+    text-decoration: none;
+    margin: 30px;
+    font-size:xx-large;  
+}
+
+/*contenedorSuper*/
+#listaIzquierda{
+    width: 300px;
+}
+#listaDerecha{
+    width: 1000px;
+}
+
+
+#listaDerecha li{
+    margin-top: 10px;
+}
+
+/*contenedorInferior*/
+#contenedorInferior{
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: end;
+
+}
+.hijosContenedor{
+    width: 500px;
+    padding-right: 190px;
+    border-top: 5px solid #85B2DA;
+    margin-right: 20px;
+}
+
+/*footer*/
+footer{
+    padding-top:30px;
+    background-image: linear-gradient(#245076, #306FA4);
+}
+
+footer p, h2{
+    font-weight: lighter;
+}
+
+
