@@ -1,0 +1,251 @@
+nav{
+    align-items: center;
+    margin: 10px auto;
+    border: 1px solid #878585;
+    border-radius: 5px;
+    background: linear-gradient(white,  #D2D2D2);
+}
+
+#barraSuperior{
+    justify-content: space-between;
+    width: 1100px;
+    margin-left: 20px;
+}
+
+
+img[src^="accordance/menu_icon1.png"]{
+    height: 75px;
+}
+
+form button{
+    display: inline-block;
+    vertical-align: bottom;
+    height: 20px;
+    border: none;
+    margin-left: 0px;
+    text-decoration: none;
+}
+form img{
+    height: 24px;
+    margin-left: 0px;
+}
+
+#search{
+    margin-right: 0px;
+}
+#enlaces a{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    margin-right: 50px;
+    font-weight: 800;
+    border-right: 1px solid rgb(190, 188, 188);
+    width: 100px;
+    font-size: large;
+}
+
+#barraBusqueda{
+    background-color: white;
+    border-radius: 30px;
+}
+#search{
+    border: none;
+}
+/*main*/
+img[src^="accordance/main.png"]{
+    width: 1300px;
+    margin: auto;
+    display: block
+}
+/*clases generales*/
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.alinearDisplay{
+    display: inline-block;
+}
+.ancho{
+    width: 1300px;
+}
+
+.alinearFlex{
+    display: flex;
+}
+.centrarTexto{
+    text-align: center;
+}
+.marginTop20{
+    margin-top: 20px;
+}
+
+.marginBottom20{
+    margin-bottom: 20px;
+}
+.blanco{
+    color: white;
+}
+.celesteLetra{
+    color: #75A4BE;
+}
+
+#barra{
+    background-color: #424242;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    padding: 18px 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#barra a{
+    text-decoration: none;
+    margin-left: 40px;
+}
+#contenedorMedio{
+    text-align: center;
+    border: 1px solid rgb(190, 188, 188);
+    padding: 30px 0px;
+    margin: 0px auto;
+    border-top-left-radius: 5px ;
+    border-top-right-radius: 5px ;
+}
+#contenedorMedio h1{
+    width: 625px;
+    font-weight: lighter;
+    color: #959595;
+    margin-right: 42px;
+    border-right: 2px solid rgb(190, 188, 188);
+}
+
+#contenedorMedio a{
+    width: 370px;
+    text-decoration: none;
+    background: linear-gradient(#70b5ea, #4984b1);
+    font-size: 25px;
+    border-radius: 5px;
+    padding: 10px 0px;
+}
+#targetas{
+    justify-content: center;
+    height: 450px;
+    background: linear-gradient(white, #EFF2F6);
+    margin: 0px auto;
+    border-right: 2px solid rgb(190, 188, 188);
+    border-left: 2px solid rgb(190, 188, 188);
+    border-bottom: 2px solid rgb(190, 188, 188);
+    padding-top: 30px;
+}
+#vacio{
+    width: 1300px;
+    height: 90px;
+    background-color:  #EFF2F6;
+    margin: 0px auto;
+    border-right: 2px solid rgb(190, 188, 188);
+    border-left: 2px solid rgb(190, 188, 188);
+    border-bottom: 2px solid rgb(190, 188, 188);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px ;
+}
+
+.targeta{
+    width: 300px;
+    margin: 0px auto;  
+}
+#targeta2, #targeta3{
+    border-right: 2px solid rgb(190, 188, 188);
+}
+
+#targeta4{
+    border-right:  2px solid rgb(190, 188, 188);
+}
+.targeta p{
+    width: 250px;
+    height: 65px;
+    text-align: justify;
+}
+
+.targeta h3{
+    width: 150px;
+}
+
+.img{
+    height: 225px;
+}
+.imgtargeta{
+    width: 280px;
+}
+.boton{
+    text-align: center;
+}
+.targeta a{
+    background: linear-gradient(#70b5ea, #4984b1);
+    padding: 8px 40px;
+    text-decoration: none;
+    border-bottom: 1px solid gray;
+    border-radius: 5px;
+}
+
+footer{
+    width: 1300px;
+    height:260px;
+    justify-content: space-around;
+    margin: 30px auto;
+    border-bottom: 2px solid rgb(190, 188, 188);
+}
+.linea{
+    border-top: 2px solid rgb(190, 188, 188);
+    padding-top: 12px;
+}
+footer li, footer h4{
+    margin-bottom: 10px;
+}
+
+footer ul{
+    width: 170px;
+}
+footer a{
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: lighter;
+    color: #787777;
+}
+
+footer li{
+    list-style: none;
+}
+
+
+
+#piePagina{
+    margin: 30px auto;
+}
+
+#p1{
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: lighter;
+    color: #787777;
+}
+
+#p2{
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: lighter;
+    color: #787777;
+}
+
+#piePagina a{
+    width: 250px;
+    text-align: center;
+    border-left: 1px solid rgb(190, 188, 188);
+    border-right: 1px solid rgb(190, 188, 188);
+}
+
+hr{
+    rotate: -65deg;
+    width: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
